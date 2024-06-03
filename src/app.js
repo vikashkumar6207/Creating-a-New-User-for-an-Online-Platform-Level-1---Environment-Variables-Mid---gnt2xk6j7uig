@@ -15,7 +15,7 @@ app.use(express.json());
 app.post("/api/v1/details", (req, res) => {
   const newId = userDetails[userDetails.length - 1].id + 1;
   const {name, mail, number } = req.body;
-  const newUser = {id : newId, name, mail, number};
+  const newUser = {id: newId, name, mail, number};
   userDetails.push(newUser)
   fs.writeFile(`${__dirname}/data/userDetails.json`),
   JSON.stringify(userDetails), 
